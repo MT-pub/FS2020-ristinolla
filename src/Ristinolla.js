@@ -7,6 +7,8 @@ function Ristinolla() {
   const [vuoro, setVuoro] = useState('x')
   const [voitto, setVoitto] = useState('')
   const [laskuri, setLaskuri] = useState(1)
+  
+  //Kun 'voitto' muuttuu, tulostetaan sen tilan mukaan viesti.
   useEffect(() => {
     if (voitto === 'x') {
       document.getElementById("voittaja").innerHTML = "Voittaja on x"
@@ -17,8 +19,10 @@ function Ristinolla() {
     }
   }, [voitto])
 
+  //Klikinkäsittelijä toimii, jos voittoa tai tasapeliä ei ole tullut. Voitontarkistus aina merkin laiton jälkeen.
   const nelioNapautus = (y, x) => {
     let nid = "n" + y + x
+
     if (voitto === '') {
       if (document.getElementById(nid).innerHTML === '') {
         document.getElementById(nid).innerHTML = vuoro
@@ -36,6 +40,7 @@ function Ristinolla() {
     }
   }
 
+  //Iljettävän näköinen HTML-elementtien tarkistus harjoittelun vuoksi
   const tarkistaVoitto = () => {
     //Ylimmän rivin tarkistus
     if (document.getElementById("n11").innerHTML === document.getElementById("n12").innerHTML &&
@@ -78,6 +83,7 @@ function Ristinolla() {
       setVoitto(document.getElementById("n13").innerHTML)
     }
 
+    //laskuri täyden pelilaudan/tasapelin tarkistusta varten
     if (laskuri === 9 && voitto === '') {
       setVoitto('0')
     } else {
