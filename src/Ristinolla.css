@@ -1,5 +1,31 @@
 .Ristinolla {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5%;
+  width: 400px;
+  height: 400px;
+  padding: 5px;
+  border: 1px solid #222222;
+}
+
+.rivi {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Nelio {
+  display: block;
+  width: 125px;
+  height: 125px;
+  border: 1px solid #222222;
+  font-size: 5em;
   text-align: center;
+}
+
+body {
+  
 }
 
 .Ristinolla-logo {
